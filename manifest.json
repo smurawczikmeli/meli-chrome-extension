@@ -11,6 +11,8 @@
     "webRequest",
     "http://testuser.ml.com/",
     "https://vender.mercadolibre.com.ar/",
+    "https://vender.mercadolibre.com.mx/",
+    "https://vender.mercadolivre.com.br/",
     "storage"
   ],
   "web_accessible_resources": [
@@ -23,7 +25,7 @@
       "js": ["createItem.js"]
     },
     {
-      "matches": ["https://vender.mercadolibre.com.ar/*"],
+      "matches": ["https://vender.mercadolibre.com.ar/*", "https://vender.mercadolibre.com.mx/*", "https://vender.mercadolivre.com.br/*"],
       "js": ["fetcherInterceptor.js"]
     }
   ]
