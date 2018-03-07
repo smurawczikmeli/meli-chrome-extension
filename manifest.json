@@ -22,7 +22,8 @@
   "content_scripts": [
     {
       "matches": ["http://testuser.ml.com/*"],
-      "js": ["createItem.js"]
+      "js": ["createItem.js"],
+      "css": ["createItem.css"]
     },
     {
       "matches": ["https://vender.mercadolibre.com.ar/*", "https://vender.mercadolibre.com.mx/*", "https://vender.mercadolivre.com.br/*"],

@@ -1,0 +1,18 @@
+.optlist {
+    position: absolute;
+    background-color: white;
+    display: none;
+    max-width: 350px;
+    max-height: 250px;
+    overflow: scroll;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.35);
+}
+
+.optlistoption {
+    padding: 6px 12px;
+}
+
+.optlistoption:hover {
+    background-color: rgba(0,0,0,0.25);
+    cursor: pointer;
+}

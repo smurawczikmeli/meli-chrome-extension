@@ -49,7 +49,7 @@ function init () {
                 filteredCats = cats.filter(cat => cat.name.toLowerCase().indexOf(value.toString().toLowerCase()) >= 0);
                 if (value.length) {
                     optList.innerHTML = generateOpts(filteredCats);
-                    optList.style.display = "";
+                    optList.style.display = "block";
                 } else {
                     optList.style.display = "none";
                     optList.innerHTML = "";
@@ -70,15 +70,8 @@ function init () {
             var optList = document.createElement("div");
             optList.className = "optlist";
             document.body.appendChild(optList)
-            optList.style.position = "absolute";
-            optList.style.top = getOffsetTopToParent(category) + category.offsetHeight + "px";
+            optList.style.top = getOffsetTopToParent(category) + category.offsetHeight + 1 + "px";
             optList.style.left = getOffsetLeftToParent(category) + "px";
-            optList.style.backgroundColor = "white";
-            optList.style.display = "none";
-            optList.style.maxWidth = "350px";
-            optList.style.maxHeight = "250px";
-            optList.style.overflow = "scroll";
-            optList.style.boxShadow = "10px 10px 15px 0px rgba(0,0,0,0.35)";
         });    
     }
     
@@ -106,7 +99,7 @@ function init () {
 
     function generateOpts(opts) {
         return opts.reduce((prev, element) => {
-            return prev + "<div style='padding: 6px 12px;cursor: pointer;' class='optlistoption' data-id='" + element.id + "'>" + element.name + "</div>";
+            return prev + "<div class='optlistoption' data-id='" + element.id + "'>" + element.name + "</div>";
         }, "");
     }
 }
