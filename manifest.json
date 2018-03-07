@@ -1,0 +1,30 @@
+{
+  "name": "Categories AutoComplete",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "extension para autocompletar categorias en testuser (ML) a la hora de crear items, quien quiera aportar a poner mas items, hay un script js que se pega en vender, y mientras van recorriendo categorias, guarda las que son child en el array childCategories, luego las agarran a mano y las pasan a un JSON segun pais o las mergean con las ya existentes",
+  "browser_action": {
+    "default_title": "Categories AutoComplete",
+    "default_icon": "rainbow.png"
+  },
+  "permissions": [
+    "webRequest",
+    "http://testuser.ml.com/",
+    "https://vender.mercadolibre.com.ar/",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "MLM.json",
+    "MLA.json"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://testuser.ml.com/*"],
+      "js": ["createItem.js"]
+    },
+    {
+      "matches": ["https://vender.mercadolibre.com.ar/*"],
+      "js": ["fetcherInterceptor.js"]
+    }
+  ]
+}
